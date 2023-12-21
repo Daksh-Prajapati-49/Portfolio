@@ -1,0 +1,77 @@
+.navi{
+    background-color: #3c3c3c15;
+    width: -webkit-fill-available;
+    position: fixed;
+    display:flex;
+    top : 0;
+    flex-direction: row;
+    justify-content:start;
+    gap : 1rem;
+    align-items: center;
+    padding : 1rem 0rem;
+    z-index: 1;
+}
+
+.navi__scroll{
+    background-color:#b3b3b390 ;
+    backdrop-filter: blur(5px);
+
+}
+
+.nav__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap : 1rem;
+    
+}
+
+.nflex{
+    flex-direction: column;
+}
+
+.nflexh{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    width: -webkit-fill-available
+    /* gap : 1rem; */
+}
+
+.clconth{
+    padding-right : 2rem;
+}
+
+.clconth > div{
+    cursor : pointer;
+    
+}
+
+.nflexc{
+    display : none;
+    flex-direction: column;
+}
+
+.dflexc{
+    flex-direction: column;
+    /* display: block; */
+    align-items: start;
+    justify-content: start;
+    padding : 0rem 2rem;
+    transition: all 0.3s ease-in-out;
+    width: -webkit-fill-available
+}
+
+h1{
+    margin-left: 2rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.nav__content > div{
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+

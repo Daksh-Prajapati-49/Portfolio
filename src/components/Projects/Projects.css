@@ -4,7 +4,8 @@
     padding : auto 3rem;
     justify-content: space-between;
     gap : 1rem;
-    width : fit-content;
+    /* width : fit-content; */
+    width : 100%;
     /* margin : auto; */
     background-color: #F8F9FA;
     /* width : 100vw; */
