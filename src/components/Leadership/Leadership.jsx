@@ -4,7 +4,7 @@ import Carousel from './Carousel'
 
 const Leadership = () => {
   return (
-    <div className='leadership'>
+    <div className='leadership' id='leadership'>
       <h1>Leadership</h1>
       <div>
         <p>

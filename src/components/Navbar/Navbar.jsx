@@ -48,7 +48,7 @@ const Navbar = () => {
     return (
         <div className={clnav}>
             <div className={clconth}>
-                <h1> {`<Daksh />`} </h1>
+                <a href='#home'> {`<Daksh />`} </a>
                 {
                     isMobile ?
                         (
@@ -63,10 +63,10 @@ const Navbar = () => {
 
             </div>
             <div className={clcont}>
-                <div>Projects</div>
-                <div>Resume</div>
-                <div>About</div>
-                <div>Skills</div>
+                <a href='#project' alt=''>Projects</a>
+                <a href='' alt=''>Resume</a>
+                <a href='#about' alt=''>About</a>
+                <a href='#skills' alt=''>Skills</a>
             </div>
         </div>
     )

@@ -6,6 +6,7 @@
     display:grid;
     align-items: center;
     gap : 0px;
+    text-align: center;
 }
 
 @keyframes gradient {

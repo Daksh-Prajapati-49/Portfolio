@@ -44,6 +44,14 @@
     padding-right : 2rem;
 }
 
+.clconth > a{
+    text-decoration : none;
+    font-size: 1.3rem;
+    color : black;
+    font-weight: 400;
+    margin-left : 2rem;
+}
+
 .clconth > div{
     cursor : pointer;
     
@@ -64,13 +72,9 @@
     width: -webkit-fill-available
 }
 
-h1{
-    margin-left: 2rem;
-    font-weight: 400;
-    font-size: 1.3rem;
-}
-
-.nav__content > div{
+.nav__content > a{
+    text-decoration: none;
+    color : black;
     font-size: 1.3rem;
     font-weight: 100;
 }

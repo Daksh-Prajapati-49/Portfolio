@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Header = () => {
     return (
-        <div className='header'>
+        <div className='header' id='home'>
             <div className='header__content'>
                 <h1>Daksh Prajapati</h1>
                 <h4>Full Stack Developer</h4>
