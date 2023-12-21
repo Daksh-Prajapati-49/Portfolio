@@ -1,0 +1,48 @@
+.about{
+    display:flex;
+    background-color: #E9ECEF;
+    justify-content: space-between;
+    padding : 3.5rem 8rem;
+    gap : 2rem;
+}
+
+.about > img{
+    width : 370px;
+    border-radius:50%;
+}
+
+.about__content{
+    display : flex;
+    flex-direction: column;
+}
+
+.about__content > h1{
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+.about__content > p{
+    font-size: 1.3rem;
+    max-width : 700px;
+    font-weight: 100;
+    margin : auto;
+    margin-top: 1rem;
+}
+
+.about__content > div{
+    font-size: 1.3rem;
+    border: 1px solid black;
+    width : fit-content;
+    color: black;
+    padding : 0.5rem 1rem;
+    margin : auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about__content > div:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
