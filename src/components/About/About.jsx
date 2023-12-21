@@ -1,10 +1,11 @@
 import React from 'react'
 import './About.css'
+// import useWindowDimensions from '../utils/useWindowDimension'
 
 const About = () => {
   return (
     <div className='about' id='about'>
-      <img  src='https://mohd-shahid-iqbal.github.io/myportfolio/static/media/shahid.c9f7e04d7825dd13872b.png' alt='profile' />
+      <img  id='pic' src='https://mohd-shahid-iqbal.github.io/myportfolio/static/media/shahid.c9f7e04d7825dd13872b.png' alt='profile' />
       <div className='about__content'>
         <h1>
           About Me

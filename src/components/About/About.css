@@ -5,9 +5,10 @@
     padding : 3.5rem 8rem;
     gap : 2rem;
     text-align: center;
+    flex-wrap: wrap;
 }
 
-.about > img{
+#pic{
     width : 370px;
     border-radius:50%;
 }
