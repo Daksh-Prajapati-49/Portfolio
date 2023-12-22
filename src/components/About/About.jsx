@@ -5,7 +5,7 @@ import './About.css'
 const About = () => {
   return (
     <div className='about' id='about'>
-      <img  id='pic' src='https://mohd-shahid-iqbal.github.io/myportfolio/static/media/shahid.c9f7e04d7825dd13872b.png' alt='profile' />
+      <img  id='pic' src='/profile_pic.jpeg' alt='profile' />
       <div className='about__content'>
         <h1>
           About Me
@@ -13,9 +13,9 @@ const About = () => {
         <p>
           I am a Full Stack Developer with a Bachelor's of Technology in Electronics & Communication Engineering from IIIT, Jabalpur. I have a passion for learning and sharing my knowledge with others.
         </p>
-        <div>
+        <a href='https://drive.google.com/file/d/1An7PmgmgN5PUW-EIncSWWB37odYDALvK/view?usp=sharing' target='_blank' rel='noreferrer' alt='resume'>
           Resume
-        </div>
+        </a>
 
       </div>
     </div>

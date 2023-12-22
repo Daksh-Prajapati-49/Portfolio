@@ -64,7 +64,7 @@ const Navbar = () => {
             </div>
             <div className={clcont}>
                 <a href='#project' alt=''>Projects</a>
-                <a href='' alt=''>Resume</a>
+                <a href='https://drive.google.com/file/d/1An7PmgmgN5PUW-EIncSWWB37odYDALvK/view?usp=sharing' rel="noreferrer" target='_blank' alt='resume'>Resume</a>
                 <a href='#about' alt=''>About</a>
                 <a href='#skills' alt=''>Skills</a>
             </div>

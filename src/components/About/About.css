@@ -1,9 +1,9 @@
 .about{
     display:flex;
     background-color: #E9ECEF;
-    justify-content: space-between;
-    padding : 3.5rem 8rem;
-    gap : 2rem;
+    justify-content: space-around;
+    padding : 3.5rem 2rem;
+    gap : 1rem;
     text-align: center;
     flex-wrap: wrap;
 }
@@ -32,18 +32,19 @@
     margin-top: 1rem;
 }
 
-.about__content > div{
+.about__content > a{
+    text-decoration: none;
+    color: black;
     font-size: 1.3rem;
     border: 1px solid black;
     width : fit-content;
-    color: black;
     padding : 0.5rem 1rem;
     margin : auto;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.about__content > div:hover{
+.about__content > a:hover{
     background-color: black;
     color: white;
     transition: all 0.3s ease-in-out;
