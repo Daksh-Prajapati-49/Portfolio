@@ -17,9 +17,9 @@ const Header = () => {
                     <InstagramIcon style = {{ fontSize : '3.4rem'}} />
                     <LinkedInIcon style = {{ fontSize : '3.4rem'}} />
                 </div>
-                <div className='header__about'>
+                <a href="#about" className='header__about'>
                     More about me
-                </div>
+                </a>
             </div>
         </div>
     )

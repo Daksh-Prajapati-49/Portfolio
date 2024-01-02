@@ -48,6 +48,7 @@
 
 
 .header__about{
+    text-decoration: none;
     font-size: 1.3rem;
     border: 1px solid white;
     width : fit-content;

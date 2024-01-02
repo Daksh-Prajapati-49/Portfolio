@@ -68,8 +68,9 @@
 .proj > h3 > div{
     font-size: 0.9rem;
     font-weight: 500;
-    background-color: #F8F9FA;
+    background-color: #e6e6e6;
     padding : 2px 3px;
+    border-radius: 5px;
 }
 
 .proj__footer{
