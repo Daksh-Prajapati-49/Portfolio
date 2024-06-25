@@ -52,8 +52,8 @@ const skills = [
       "level": 70
     },
     {
-      "name": "C",
-      "level": 60
+      "name": "Java",
+      "level": 75
     }
   ]
 ]
