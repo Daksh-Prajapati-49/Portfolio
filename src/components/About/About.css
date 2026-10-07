@@ -1,6 +1,6 @@
 .about__grid {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     gap: 3.5rem;
     align-items: center;
 }
@@ -74,7 +74,7 @@
 
 @media (max-width: 860px) {
     .about__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .about__pic {

@@ -47,7 +47,7 @@
 
 .exp__card:hover {
     border-color: var(--green);
-    transform: translateX(6px);
+    transform: translateX(3px);
     box-shadow: 0 10px 30px -10px rgba(126, 231, 135, 0.18);
 }
 
@@ -106,4 +106,66 @@
     font-family: var(--mono);
     font-size: 0.85rem;
     color: var(--muted);
+}
+
+.exp__node--head {
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    50% {
+        box-shadow: 0 0 0 6px rgba(126, 231, 135, 0.15), 0 0 18px rgba(126, 231, 135, 0.6);
+    }
+}
+
+.exp__wordmark {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #111;
+    letter-spacing: -0.02em;
+}
+
+.exp__summary {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+.exp__points {
+    list-style: none;
+    margin-top: 0.9rem;
+}
+
+.exp__points > li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.exp__points > li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+}
+
+.exp__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.exp__stack > span {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--cyan);
+    background: rgba(86, 212, 245, 0.08);
+    border: 1px solid rgba(86, 212, 245, 0.2);
+    border-radius: 999px;
+    padding: 0.15rem 0.65rem;
 }

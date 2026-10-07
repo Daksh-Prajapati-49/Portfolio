@@ -131,3 +131,36 @@
     text-align: center;
     margin-top: 3rem;
 }
+
+.project__label {
+    font-size: 0.9rem;
+    margin-bottom: 1.1rem;
+}
+
+.project__grid--featured {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+    margin-bottom: 3.5rem;
+}
+
+.proj--featured {
+    background: linear-gradient(160deg, rgba(126, 231, 135, 0.06), transparent 45%), var(--panel);
+}
+
+.proj__badge {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--green);
+}
+
+.proj__tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.proj__tags > li {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--cyan);
+}

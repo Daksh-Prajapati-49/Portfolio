@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 
-const roles = ['Full Stack Developer', 'Software Engineer', 'Competitive Programmer', 'React Enthusiast'];
+const roles = ['Software Engineer @ Katha', 'Backend Engineer', 'AI Agent Builder', 'Full Stack Developer'];
 
 // Types out each role, pauses, deletes it, and moves on to the next one.
 const useTypewriter = (words, typeSpeed = 80, deleteSpeed = 40, pause = 1600) => {
@@ -57,8 +57,8 @@ const Header = () => {
                         </p>
                         <p><span className='t-prompt'>$</span> cat education.txt</p>
                         <p className='t-out'>B.Tech, Electronics &amp; Communication — IIIT Jabalpur</p>
-                        <p><span className='t-prompt'>$</span> cat status.txt</p>
-                        <p className='t-out t-green'>● open to full-time SDE / Frontend roles</p>
+                        <p><span className='t-prompt'>$</span> cat now.txt</p>
+                        <p className='t-out t-green'>● shipping AI agents &amp; backend systems for influencer marketing</p>
                     </div>
                 </div>
 

@@ -12,8 +12,8 @@ const Footer = () => {
         <p className='footer__cmd'><span>05.</span> $ ./contact.sh</p>
         <h2>Get in Touch</h2>
         <p className='footer__text'>
-          I'm currently looking for full-time Software Engineer / Frontend Developer opportunities.
-          Whether you know of an opening, have a question, or just want to say hi — my inbox is always open.
+          Always up for conversations about backend systems, AI agents or interesting engineering roles.
+          Whether you have an opportunity, a question, or just want to say hi — my inbox is always open.
         </p>
         <a href='mailto:dakshprajapati493@gmail.com' className='btn footer__cta'>
           $ mail dakshprajapati493@gmail.com

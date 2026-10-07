@@ -3,7 +3,16 @@ import './Skills.css';
 import ProgressBar from "./ProgressBar";
 import useReveal from '../utils/useReveal'
 
+const stack = {
+  languages: ['Ruby', 'JavaScript', 'TypeScript', 'Python', 'C++', 'Java', 'SQL'],
+  backend: ['Ruby on Rails', 'Node.js', 'Express.js', 'Sidekiq', 'Redis', 'MySQL', 'MongoDB'],
+  ai: ['OpenAI function calling', 'Agents', 'Embeddings', 'Pinecone', 'Prompt design'],
+  frontend: ['React', 'Next.js', 'Tailwind', 'React Query', 'Material UI'],
+  infra: ['AWS S3/SES', 'Capistrano', 'Docker', 'New Relic', 'Webhooks'],
+};
+
 const skills = {
+  'stack.json': stack,
   'frontend.json': [
     { name: 'HTML', level: 90 },
     { name: 'CSS', level: 80 },
@@ -47,19 +56,37 @@ const Skills = () => {
           ))}
         </div>
         <div className='editor__body'>
-          <p className='comment'>{`// proficiency.log — ${active.replace('.json', '')}`}</p>
+          <p className='comment'>{active === 'stack.json' ? '// what I ship with day to day' : `// proficiency.log — ${active.replace('.json', '')}`}</p>
           {/* key forces a remount so bars re-animate when switching tabs */}
-          <div className='skills__data' key={active}>
-            {skills[active].map((skill, i) => (
-              <ProgressBar
-                key={skill.name}
-                name={skill.name}
-                progress={skill.level}
-                animate={visible}
-                delay={i * 120}
-              />
-            ))}
-          </div>
+          {Array.isArray(skills[active]) ? (
+            <div className='skills__data' key={active}>
+              {skills[active].map((skill, i) => (
+                <ProgressBar
+                  key={skill.name}
+                  name={skill.name}
+                  progress={skill.level}
+                  animate={visible}
+                  delay={i * 120}
+                />
+              ))}
+            </div>
+          ) : (
+            <pre className='skills__json' key={active}>
+              {'{'}
+              {Object.entries(skills[active]).map(([group, items], i, all) => (
+                <div className='skills__row' key={group}>
+                  {'  '}<span className='c-var'>"{group}"</span>: [
+                  {items.map((item, j) => (
+                    <span key={item}>
+                      <span className='skills__chip'>"{item}"</span>{j < items.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                  ]{i < all.length - 1 ? ',' : ''}
+                </div>
+              ))}
+              {'}'}
+            </pre>
+          )}
         </div>
       </div>
     </section>

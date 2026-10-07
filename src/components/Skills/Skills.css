@@ -55,3 +55,33 @@
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr));
     gap: 0.2rem 3rem;
 }
+
+.skills__json {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--text);
+    white-space: pre-wrap;
+    animation: fadeIn 0.4s ease;
+}
+
+.skills__row {
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+}
+
+.skills__chip {
+    color: var(--yellow);
+    border-radius: 4px;
+    padding: 0.05rem 0.15rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.skills__chip:hover {
+    background: rgba(126, 231, 135, 0.12);
+    color: var(--green);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+}
