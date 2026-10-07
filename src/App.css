@@ -1,8 +1,19 @@
 .App {
-  /* text-align: center; */
-  position : relative;
-  transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
+/* faint dotted grid behind everything */
+.App::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(125, 139, 156, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
 
-
+.App > * {
+  position: relative;
+  z-index: 1;
+}

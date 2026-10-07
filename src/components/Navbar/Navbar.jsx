@@ -1,74 +1,57 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
-import useWindowDimensions from '../utils/useWindowDimension'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
+const RESUME_URL = 'https://drive.google.com/file/d/1An7PmgmgN5PUW-EIncSWWB37odYDALvK/view?usp=sharing';
+
+const links = [
+    { href: '#about', label: 'about' },
+    { href: '#exp', label: 'experience' },
+    { href: '#project', label: 'projects' },
+    { href: '#skills', label: 'skills' },
+    { href: '#contact', label: 'contact' },
+];
 
 const Navbar = () => {
-    const { height, width} = useWindowDimensions();
-    const isMobile = width <= 768;
-
-    
-    const [clcont, setClcont] = useState("nav__content")
-    const [clconth, setClconth] = useState("clconth")
-    const [fl, setfl] = useState(0);
-
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const handleScroll = () => {
-        const position = window.scrollY;
-        setScrollPosition(position);
-    };
-    const [clnav, setClnav] = useState(`navi ${scrollPosition > 20 ? ("navi__scroll") : ("navi__scroll")}`)
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const [scrolled, setScrolled] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
-        setClnav(`navi ${isMobile ? ("nflex") : ("")} ${scrollPosition > 20 ? ("navi__scroll") : ("")}`);
-        setClcont(`nav__content ${isMobile ? ("nflexc") : ("")}`)
-        setClconth(`clconth ${isMobile ? ("nflexh") : ("")}`)
-    }, [isMobile])
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-    useEffect(() => {
-        setClnav(`navi ${isMobile ? ("nflex") : ("")} ${scrollPosition > 20 ? ("navi__scroll") : ("")}`);
-        // console.log(scrollPosition);
-    }, [scrollPosition])
-
-    const handleClick = () => {
-        setClcont(`nav__content ${isMobile ? ("dflexc") : ("")}`);
-        setfl(1);
-        // clcont = `nav__content ${isMobile ? ("dflexc") : ("")}`;
-    }
-
-    const handleClose = () => {
-        setClcont(`nav__content ${isMobile ? ("nflexc") : ("")}`);
-        setfl(0);
-    }
+    const close = () => setOpen(false);
 
     return (
-        <div className={clnav}>
-            <div className={clconth}>
-                <a href='#home'> {`<Daksh />`} </a>
-                {
-                    isMobile ?
-                        (
-                            fl === 0 ?
-                                (
-                                    <div onClick={handleClick}> {isMobile ? (<MenuIcon style={{ fontSize: "2rem", position: "relative", top: "2px" }} />) : ("")} </div>
-                                ) : (
-                                    <div onClick={handleClose}> {isMobile ? (<CloseIcon style={{ fontSize: "2rem", position: "relative", top: "2px" }} />) : ("")} </div>
-                                )
-                        ) : ("")
-                }
+        <nav className={`navi ${scrolled ? 'navi--scrolled' : ''}`}>
+            <a href='#home' className='navi__logo' onClick={close}>
+                <span className='navi__prompt'>~/</span>daksh<span className='navi__cursor'>_</span>
+            </a>
 
+            <button
+                className='navi__toggle'
+                aria-label={open ? 'Close menu' : 'Open menu'}
+                aria-expanded={open}
+                onClick={() => setOpen(!open)}
+            >
+                {open ? <CloseIcon /> : <MenuIcon />}
+            </button>
+
+            <div className={`navi__links ${open ? 'navi__links--open' : ''}`}>
+                {links.map((link, i) => (
+                    <a key={link.href} href={link.href} onClick={close}>
+                        <span className='navi__num'>0{i + 1}.</span>{link.label}
+                    </a>
+                ))}
+                <a href={RESUME_URL} target='_blank' rel='noreferrer' className='btn navi__resume' onClick={close}>
+                    resume.pdf
+                </a>
             </div>
-            <div className={clcont}>
-                <a href='#project' alt=''>Projects</a>
-                <a href='https://drive.google.com/file/d/1An7PmgmgN5PUW-EIncSWWB37odYDALvK/view?usp=sharing' rel="noreferrer" target='_blank' alt='resume'>Resume</a>
-                <a href='#about' alt=''>About</a>
-                <a href='#skills' alt=''>Skills</a>
-            </div>
-        </div>
+        </nav>
     )
 }
 

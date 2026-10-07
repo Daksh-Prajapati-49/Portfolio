@@ -1,22 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import './ProgressBar.css'; // Import or define your styles
+import React from 'react';
+import './ProgressBar.css';
 
-const ProgressBar = ({ name, progress }) => {
-  const [barWidth, setBarWidth] = useState(0);
+const BLOCKS = 20;
 
-  useEffect(() => {
-    setBarWidth(progress);
-  }, [progress]);
+// Renders an ASCII-style bar like [████████████░░░░░░░░] 60%, filling in once `animate` is true.
+const ProgressBar = ({ name, progress, animate, delay = 0 }) => {
+  const filled = Math.round((progress / 100) * BLOCKS);
 
   return (
     <div className="progress-container">
-      <div className="progress-label">{name}</div>
-      <div className="progress-bar">
-        <div
-          className="progress-done"
-          style={{ width: `${barWidth}%` }}
-        ></div>
-      </div>
+      <span className="progress-label">{name}</span>
+      <span className="progress-bar" aria-label={`${name}: ${progress}%`}>
+        [
+        {Array.from({ length: BLOCKS }, (_, i) => (
+          <span
+            key={i}
+            className={`progress-block ${i < filled && animate ? 'progress-block--on' : ''}`}
+            style={{ transitionDelay: `${delay + i * 30}ms` }}
+          >
+            {i < filled && animate ? '█' : '░'}
+          </span>
+        ))}
+        ]
+      </span>
+      <span className="progress-pct">{progress}%</span>
     </div>
   );
 };

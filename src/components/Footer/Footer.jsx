@@ -1,19 +1,36 @@
 import React from 'react'
 import './Footer.css'
-import CodeIcon from '@mui/icons-material/Code';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import useReveal from '../utils/useReveal'
 
 const Footer = () => {
+  const [ref, visible] = useReveal();
+
   return (
-    <div className='footer' id='exp'>
-      <h1>Get in Touch</h1>
-      <p>
-        I'm currently looking for full-time React Developer/Frontend Developer opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at, <a href='mailto:dakshprajapati493@gmail.com'>dakshprajapati493@gmail.com</a>.
-      </p>
-      <h5>
-        <CodeIcon style={{ fontSize : '1rem'}}/> with <FavoriteIcon style={{ fontSize : '1rem'}}/> by <a href='https://github.com/Daksh-Prajapati-49' target='_blank' rel="noreferrer">Daksh Prajapati</a> using <img src='https://cdn.iconscout.com/icon/free/png-256/free-react-1543566-1306069.png?f=webp&w=256' alt='react' />
-      </h5>
-    </div>
+    <footer className='footer' id='contact'>
+      <div className={`section footer__inner reveal ${visible ? 'is-visible' : ''}`} ref={ref}>
+        <p className='footer__cmd'><span>05.</span> $ ./contact.sh</p>
+        <h2>Get in Touch</h2>
+        <p className='footer__text'>
+          I'm currently looking for full-time Software Engineer / Frontend Developer opportunities.
+          Whether you know of an opening, have a question, or just want to say hi — my inbox is always open.
+        </p>
+        <a href='mailto:dakshprajapati493@gmail.com' className='btn footer__cta'>
+          $ mail dakshprajapati493@gmail.com
+        </a>
+      </div>
+
+      <div className='footer__bar'>
+        <span>
+          <span className='footer__tag'>&lt;/&gt;</span> with <span className='footer__heart'>♥</span> by{' '}
+          <a href='https://github.com/Daksh-Prajapati-49' target='_blank' rel='noreferrer'>
+            <GitHubIcon style={{ fontSize: '0.95rem', verticalAlign: '-2px' }} /> Daksh Prajapati
+          </a>{' '}
+          using React
+        </span>
+        <span className='footer__status'>● main · © {new Date().getFullYear()}</span>
+      </div>
+    </footer>
   )
 }
 

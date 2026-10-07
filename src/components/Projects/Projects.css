@@ -1,87 +1,133 @@
-.project{
-    display: flex;
-    flex-direction: column;
-    padding : auto 3rem;
-    justify-content: space-between;
-    gap : 1rem;
-    /* width : fit-content; */
-    width : 100%;
-    /* margin : auto; */
-    background-color: #F8F9FA;
-    /* width : 100vw; */
-    padding: 1.5rem 0rem 3rem 0rem;
-    text-align: center;
+.project__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.4rem;
 }
 
-.project > h1{
-    font-size: 3.5rem;
-    font-weight: 100;
+.proj {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.6rem;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* glowing top edge on hover */
+.proj::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+}
+
+.proj:hover {
+    transform: translateY(-6px);
+    border-color: rgba(126, 231, 135, 0.45);
+    box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.7), 0 0 30px -12px rgba(126, 231, 135, 0.25);
+}
+
+.proj:hover::before {
+    transform: scaleX(1);
+}
+
+.proj__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1.2rem;
 }
 
-.project__content{
+.proj__folder {
+    color: var(--green);
+    font-size: 2.2rem !important;
+}
+
+.proj__gh {
+    color: var(--muted);
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap : 5rem;
+    transition: color 0.2s;
+}
+
+.proj__gh:hover {
+    color: var(--green);
+}
+
+.proj__private {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+}
+
+.proj__path {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.proj__name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+}
+
+.proj:hover .proj__name {
+    color: var(--green);
+}
+
+.proj__desc {
+    font-size: 0.93rem;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+    flex: 1;
+}
+
+.proj__langbar {
+    display: flex;
+    height: 6px;
+    border-radius: 999px;
+    overflow: hidden;
+    gap: 2px;
+    margin-bottom: 0.8rem;
+}
+
+.proj__langs {
+    list-style: none;
+    display: flex;
     flex-wrap: wrap;
-    padding : 0rem 8rem;
+    gap: 0.4rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text);
 }
 
-
-.proj{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    gap : 0.5rem;
-    width : 450px;
-    margin-bottom: 1rem;
-    padding : 2rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+.proj__langs span:not(.proj__swatch) {
+    color: var(--muted);
 }
 
-.proj__name{
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.9rem;
+.proj__swatch {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.35rem;
 }
 
-.proj > a{
-    text-decoration: none;
-    font-size: small;
-    color : #6C757D;
-    border : 1px solid #6C757D;
-    border-radius : 5px;
-    padding : 0.5rem;
-    width : calc(100% - 1rem);
-}
-
-.proj > h3 {
-    display : flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-weight : 400;
-    gap: 1rem;
-}
-
-.proj > h3 > div{
-    font-size: 0.9rem;
-    font-weight: 500;
-    background-color: #e6e6e6;
-    padding : 2px 3px;
-    border-radius: 5px;
-}
-
-.proj__footer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap : 1rem 2rem;
-    width : 100%;
-}
-
-.proj__footer > h3{
-    font-weight : 400;
-    font-size: 0.9rem;
+.project__more {
+    text-align: center;
+    margin-top: 3rem;
 }

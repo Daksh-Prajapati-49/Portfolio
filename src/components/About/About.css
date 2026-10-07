@@ -1,51 +1,84 @@
-.about{
-    display:flex;
-    background-color: #E9ECEF;
-    justify-content: space-around;
-    padding : 3.5rem 2rem;
-    gap : 1rem;
-    text-align: center;
-    flex-wrap: wrap;
+.about__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3.5rem;
+    align-items: center;
 }
 
-#pic{
-    width : 370px;
-    border-radius:50%;
+.about__text > p {
+    font-size: 1.08rem;
+    color: var(--text);
+    margin-bottom: 1.6rem;
+    max-width: 620px;
 }
 
-.about__content{
-    display : flex;
-    flex-direction: column;
+.about__text strong {
+    color: var(--green);
+    font-weight: 600;
 }
 
-.about__content > h1{
-    font-size: 3.5rem;
-    font-weight: 100;
-    margin-bottom: 1rem;
+.code {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    overflow-x: auto;
+    color: var(--text);
 }
 
-.about__content > p{
-    font-size: 1.3rem;
-    max-width : 700px;
-    font-weight: 100;
-    margin : auto;
-    margin-top: 1rem;
+.c-key { color: var(--purple); }
+.c-var { color: var(--cyan); }
+.c-str { color: var(--yellow); }
+.c-bool { color: var(--orange); }
+
+.about__pic {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    justify-self: center;
 }
 
-.about__content > a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    border: 1px solid black;
-    width : fit-content;
-    padding : 0.5rem 1rem;
-    margin : auto;
-    border-radius: 5px;
-    cursor: pointer;
+.about__pic > img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    filter: grayscale(35%) contrast(1.05);
+    transition: filter 0.35s, transform 0.35s;
 }
 
-.about__content > a:hover{
-    background-color: black;
-    color: white;
-    transition: all 0.3s ease-in-out;
+/* offset outline frame */
+.about__pic::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    transform: translate(16px, 16px);
+    transition: transform 0.35s;
+}
+
+.about__pic:hover > img {
+    filter: none;
+    transform: translate(-4px, -4px);
+}
+
+.about__pic:hover::after {
+    transform: translate(10px, 10px);
+}
+
+@media (max-width: 860px) {
+    .about__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about__pic {
+        max-width: 260px;
+        order: -1;
+    }
 }
